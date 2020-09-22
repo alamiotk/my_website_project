@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projekt</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Homemade+Apple&family=Merienda&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+	<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="crossorigin="anonymous"></script>
+	<script src="jquery.easing.1.3.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				 $('#menubar li').hover(
+					 function(){
+						$('ul', this).stop().slideDown(300);
+					 },
+					 function(){
+						$('ul', this).stop().slideUp(100);
+					 }
+				 );
+
+				 $("#textToToggle").hide();
+				 $('.firstphoto').click(function(){
+						 $('#textToToggle').show().animate(
+							 {
+								 left: "21%",
+								 opacity: "1"
+							 },
+							 500
+							 	);
+							$('.firstphoto').show().animate(
+								{
+									opacity: "0"
+								}
+							);
+					});
+
+					$('#textToToggle').click(function(){
+							$('#textToToggle').show().animate(
+								{
+									opacity: "0"
+
+								},
+								500
+								 );
+							 $('.firstphoto').show().animate(
+								 {
+									 opacity: "1"
+								 }
+							 );
+					 });
+					 $('#light').hide();
+					 $('#dark').click(function(){
+ 							$('body').show().animate(
+ 								{
+ 									'background-color': "#333333"
+ 								}
+ 								 );
+							 $('#dark').show().animate(
+  								{
+  									opacity: '0'
+  								}
+  								 );
+							 $('#light').show().animate(
+									{
+										opacity: '1'
+									}
+									 );
+ 					 });
+
+					 $('#light').click(function(){
+							 $('body').show().animate(
+								 {
+									 'background-color': "#FFE4E1"
+								 }
+									);
+							$('#dark').show().animate(
+								 {
+									 opacity: '1'
+								 }
+									);
+							$('#light').show().animate(
+								 {
+									 opacity: '0'
+								 }
+									);
+						});
+
+						$('article').hide();
+
+						$('.text3').hide();
+						$('.photos2').click(function(){
+							$('article').show();
+								$('.text3').slideToggle(450);
+									$(this).toggleClass('close');
+						 });
+
+						$('.text2').hide();
+						$('.photos1').click(function(){
+							$('article').show();
+								$('.text2').slideToggle(450);
+									$(this).toggleClass('close');
+						 });
+
+						 $('#hideButton').click(function(){
+							 $('article').hide();
+						 });
+			});
+		</script>
+		<style>
+
+			body{
+			  font-family: 'Merienda', cursive;
+				margin: 20px;
+				background-color: #FFE4E1;
+			}
+
+			header{
+				position: relative;
+				margin-top:0px;
+				left: 50%;
+				font-family: 'Homemade Apple', cursive;
+				transform: translate(-50%, 0);
+				width: 600px;
+				padding: 0px;
+				background-color:#FDF5E6;
+				text-align: center;
+				font-size: 25px;
+				border-left: 3px solid 	#696969;
+				border-right: 3px solid #696969;
+				border-radius:  30px;
+				box-shadow: 5px 10px 20px 2px gray;
+			}
+
+			#menubar {
+				height:40px;
+				background-color: #FDF5E6;
+				margin: 10px;
+				padding: 10px;
+				list-style-type: none;
+				font-family: 'Handlee', cursive;
+				font-size: 20px;
+			}
+
+			#menubar li {
+				 float: left;
+				 display: block;
+				 width: 100px;
+				 background: #FDF5E6;
+				 position: relative;
+				 margin: 0 1px;
+				 border-left: 1px solid 	#696969;
+			}
+
+			#menubar li a {
+				 display: block;
+				 padding: 10px 5px 5px 5px;
+				 font-weight: 700;
+				 height: 23px;
+				 text-decoration: none;
+				 color: black;
+				 text-align: center;
+			}
+
+			#menubar li a:hover {
+				 color: #FFC0CB;
+			}
+
+			#menubar ul {
+				 position: absolute;
+				 left: 0;
+				 display: none;
+				 margin: 0 0 0 -1px;
+				 padding: 0;
+				 list-style-type: none;
+			}
+
+			#menubar ul li {
+				 width: 100px;
+				 float: left;
+				 border-left: 1px solid	#696969;
+				 border-bottom: 1px solid	#696969;
+			}
+
+			#menubar ul a {
+				 display: block;
+				 height: 15px;
+				 padding: 8px 5px;
+				 color: black;
+			}
+
+			footer {
+				padding: 5px;
+				text-align: center;
+				background-color: #FDF5E6;
+				position:relative;
+				margin-top: 80%;
+				bottom:0;
+				font-family: 'Homemade Apple', cursive;
+			}
+
+			img{
+				width:1000px;
+				height:600px;
+				padding:none;
+				border-radius: 200px;
+				box-shadow: 5px 10px 20px 2px gray;
+				opacity:1;
+			}
+
+			div.firstphoto img{
+				margin: 0;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+
+			div.firstphoto img:hover{
+				opacity: 0.5;
+			}
+
+			div.photos1 img{
+			top: 90%;
+				position: absolute;
+				left: 52%;
+			}
+			div.photos2 img{
+				top: 90%;
+				position: absolute;
+				right: 52%;
+			}
+
+			div.photos1 #small:hover, div.photos2 #small:hover{
+				opacity: 0.5;
+			}
+
+			#small{
+				width:455px;
+				height:300px;
+				opacity:1;
+			}
+
+			.text {
+				text-align: center;
+				margin-left: 10px;
+				padding: 30px;
+				position: absolute;
+				width:1000px;
+				height:600px;
+				background-color: #FDF5E6
+			}
+
+			.text2 {
+				text-align: center;
+				margin-bottom: 0;
+				margin-left: 10px;
+				padding: 30px;
+				float:left;
+				position: relative;
+				left: 52%;
+				width:500px;
+				height:1000px;
+				background-color: #FDF5E6
+			}
+
+			.text3 {
+				text-align: center;
+				margin-bottom: 0;
+				margin-left: 10px;
+				float:right;
+				padding: 30px;
+				position: relative;
+				right: 52%;
+				width:500px;
+				height:1000px;
+				background-color: #FDF5E6
+			}
+
+			.text4 {
+				text-align: center;
+				margin-bottom: 0;
+				margin-left: 10px;
+				float:right;
+				padding: 30px;
+				margin-right: 10px;
+				width:300px;
+				height:1000px;
+				background-color: #FDF5E6
+			}
+
+			#textToToggle, #textToToggle2, #textToToggle3, #textToToggle4{
+					border-radius:  20px;
+			}
+
+
+			#menu {
+			  position: fixed;
+			  left: 0;
+			  top: 50%;
+			  width: 150px;
+			  margin-top: -4em;
+				background-color: #FDF5E6;
+				list-style-type: none;
+				border-top-right-radius:  30px;
+				border-bottom-right-radius:  30px;
+				box-shadow: 5px 10px 20px 2px gray;
+			}
+
+			#menu li{
+				height:40px;
+				background-color: #FDF5E6;
+				margin: 10px;
+				padding: 10px;
+			}
+
+			#menu li a {
+				 display: block;
+				 padding: 10px 5px 5px 5px;
+				 font-weight: 700;
+				 height: 23px;
+				 text-decoration: none;
+				 color: black;
+				 text-align: center;
+				 border-left: 3px solid #696969;
+				 border-bottom:  3px solid #696969;
+			}
+
+			#menu li a:hover {
+				 color: #FFC0CB;
+			}
+
+			#menu :hover{
+				width: 250px;
+			}
+
+			#dark, #light {
+				float: right;
+				display: block;
+				padding: 10px 5px 5px 5px;
+				font-weight: 700;
+				height: 23px;
+				text-decoration: none;
+				color: black;
+				text-align: center;
+			}
+
+			#hideButton {
+				background-color: #FDF5E6;
+				height:40px;
+				width: 200px;
+				margin: 10px;
+				padding-bottom:  10px;
+				border-top: none;
+				border-right: none;
+				border-radius: 10px;
+				border-left: 3px solid #696969;
+				border-bottom:  3px solid #696969;
+				box-shadow: 5px 3px 5px 2px gray;
+			}
+
+			#newsletterButton{
+				background-color: #FDF5E6;
+				height:25px;
+				width: 100px;
+				margin: 10px;
+				padding:  0px;
+				border-top: none;
+				border-right: none;
+				border-radius: 10px;
+				border-left: 3px solid #696969;
+				border-bottom:  3px solid #696969;
+			}
+
+			#newsletterButton a{
+				font-family: 'Homemade Apple', cursive;
+				font-size: 15px;
+			}
+
+			#hideButton a {
+				font-family: 'Homemade Apple', cursive;
+				font-size: 20px;
+			}
+
+			section{
+				margin:0;
+				padding:0;
+			}
+
+			article{
+				margin-top: 60%;
+				margin-bottom: 0;
+			}
+
+			form{
+					padding-top: 50px;
+					position: absolute;
+					left: 50%;
+					transform: translate(-50%, 0);
+					text-align: center;
+					background-color: #FDF5E6;
+					width: 1000px;
+					height: 200px;
+					margin-top: 60%;
+					border-radius: 40px;
+					box-shadow: 5px 10px 20px 2px gray;
+			}
+
+		</style>
+</head>
+<body>
+	<header>
+		<h2>name of the company</h2>
+	</header>
+	<ul id="menubar">
+			<li><a href="#">Home</a></li>
+			 <li><a href="#">Gallery</a></li>
+			 <li><a href="#">Contact</a></li>
+			 <li><a href="#">About</a>
+				 <ul>
+					<li><a href="#">Company</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Motivation</a></li>
+				</ul>
+			 </li>
+			 <li><a href="#">Account </a>
+				 <ul>
+					<li><a href="#">Manage</a></li>
+					<li><a href="#">Log in</a></li>
+				</ul>
+			 </li>
+			 <a href="#" id="dark">Dark theme</a>
+			 <a href="#" id="light">Light theme</a>
+	</ul>
+	<br>
+
+
+	<ul id=menu>
+		<li><a href="#">Instagram</a></li>
+		<li><a href="#">Facebook</a></li>
+		<li><a href="#">Linkedin</a></li>
+	</ul>
+
+	<div class="text4"  id = "textToToggle4">
+
+	<h2 id="title">Lorem ipsum </h2>
+	<h6>Lorem ipsum, ipsum lorem, 03.04.2020</h6>
+	<p> 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna arcu, pellentesque et pulvinar vel, faucibus eu eros. Mauris in nibh posuere, laoreet mi sit amet, accumsan nisi. Curabitur tincidunt elit non tortor rhoncus blandit eget vitae ante. Pellentesque eu viverra dui. Donec quam arcu, egestas malesuada ornare vitae, semper ut nibh. Nullam quis interdum lacus. Fusce non dapibus enim. Phasellus porta, nibh id posuere pharetra, ipsum quam tristique arcu, non fermentum turpis nisi eu metus. Nullam rhoncus risus sed turpis dignissim fermentum.  ultricies. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+	risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+	porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+	viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+	nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+	dolor quam. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+	risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+	porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+	viverra consectetuer. Quisque cursus et, porttitor risus.</p>
+	</div>
+
+
+<section>
+
+	<div class = "text" id = "textToToggle">
+		<h3>Text</h3>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna arcu, pellentesque et pulvinar vel, faucibus eu eros. Mauris in nibh posuere, laoreet mi sit amet, accumsan nisi. Curabitur tincidunt elit non tortor rhoncus blandit eget vitae ante. Pellentesque eu viverra dui. Donec quam arcu, egestas malesuada ornare vitae, semper ut nibh. Nullam quis interdum lacus. Fusce non dapibus enim. Phasellus porta, nibh id posuere pharetra, ipsum quam tristique arcu, non fermentum turpis nisi eu metus. Nullam rhoncus risus sed turpis dignissim fermentum. Proin malesuada pretium tellus quis commodo. Praesent cursus tempus dolor nec elementum. Maecenas ligula purus, porta vel dui quis, sagittis sodales ligula. Sed posuere dolor mi, ut molestie velit sollicitudin ut. Donec mollis, nisi in ultricies aliquam, massa leo congue neque, ut semper erat augue facilisis tellus. Nam non lacus ac orci fermentum posuere non eu sem. Donec placerat sapien vel risus fringilla, in posuere leo ultricies.
+
+Curabitur et nibh quis metus luctus tempor quis at dolor. Nullam nibh nunc, accumsan sed eros ornare, tempus vestibulum nisl. Morbi fermentum finibus malesuada. Cras odio libero, fringilla nec mattis vestibulum, blandit ut neque. Quisque blandit nibh erat, ut pulvinar ante commodo in. Maecenas commodo, elit quis convallis malesuada, arcu tortor semper ipsum, sed ultricies lacus odio nec erat. Morbi eleifend, turpis feugiat placerat ullamcorper, ligula nulla volutpat justo, at volutpat augue metus interdum odio. Suspendisse potenti. Cras non lacus lectus. Cras bibendum pharetra leo non vulputate.
+
+Vivamus odio ex, facilisis scelerisque felis malesuada, ultricies rhoncus ligula. Phasellus id odio turpis. Sed lectus tellus, efficitur vitae turpis eu, consectetur vulputate velit. Suspendisse imperdiet risus lorem. Integer maximus sodales vulputate. Donec at sem ut mauris dignissim rhoncus. Curabitur lacinia viverra fringilla. Duis velit justo, fringilla id ultricies at, tristique id ante.
+
+Aliquam eu dignissim magna. Nam iaculis id dolor sit amet aliquam. Ut posuere imperdiet orci quis rhoncus. Vestibulum id nulla et lorem iaculis venenatis sit amet in nulla. Fusce id nunc massa. Quisque laoreet sagittis fermentum. Fusce vulputate ullamcorper pretium. Aliquam blandit, justo vel mollis condimentum, mi erat porta risus, rhoncus laoreet quam urna sit amet felis.
+<br><br><br>
+<h2>Click to return</h2>
+	</p>
+	</div>
+
+	<div  class="firstphoto" id = "toggle">
+		<img src="1.jpg">
+
+	</div>
+	<br>
+<article>
+	<div  class="text2" id = "textToToggle2">
+
+  <h2 id="title">Ipsum Lorem </h2>
+  <h6>Lorem ipsum, 03.02.2020</h6>
+  <p> 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna arcu, pellentesque et pulvinar vel, faucibus eu eros. Mauris in nibh posuere, laoreet mi sit amet, accumsan nisi. Curabitur tincidunt elit non tortor rhoncus blandit eget vitae ante. Pellentesque eu viverra dui. Donec quam arcu, egestas malesuada ornare vitae, semper ut nibh. Nullam quis interdum lacus. Fusce non dapibus enim. Phasellus porta, nibh id posuere pharetra, ipsum quam tristique arcu, non fermentum turpis nisi eu metus. Nullam rhoncus risus sed turpis dignissim fermentum.  ultricies. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+ risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+ porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+ viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+ nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+ dolor quam. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+dolor quam. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+dolor quam.</p>
+ </div>
+
+
+
+
+
+	 <div class="text3"  id = "textToToggle3">
+
+	 <h2 id="title">Lorem ipsum </h2>
+	 <h6>Lorem ipsum, 29.12,2019</h6>
+	 <p> 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna arcu, pellentesque et pulvinar vel, faucibus eu eros. Mauris in nibh posuere, laoreet mi sit amet, accumsan nisi. Curabitur tincidunt elit non tortor rhoncus blandit eget vitae ante. Pellentesque eu viverra dui. Donec quam arcu, egestas malesuada ornare vitae, semper ut nibh. Nullam quis interdum lacus. Fusce non dapibus enim. Phasellus porta, nibh id posuere pharetra, ipsum quam tristique arcu, non fermentum turpis nisi eu metus. Nullam rhoncus risus sed turpis dignissim fermentum.  ultricies. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+	risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+	porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+	viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+	nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+	dolor quam. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+	risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+	porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+	viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+	nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+	dolor quam. et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus
+	risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis,
+	porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam
+	viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam
+	nunc, accumsan congue. Lorem  ipsum primis in nibh vel risus. Sed vel lectus.Pt sagittis, ipsum
+	dolor quam.</p>
+	</div>
+</article>
+
+	<div class="photos1">
+		<img id="small" src="4.jpg">
+	</div>
+	<div class="photos2">
+		<img id="small" src="5.jpg">
+	</div>
+
+</section>
+
+<form name="newsletter">
+		<a>SIGN UP TO OUR NEWSLETTER TO SEE MORE!</a><br><br>
+	<input type="email" name="mail" id="varmail" required>
+	<br><br>
+	<button id = 'newsletterButton' type="submit"><a>Send</a></button>
+</form>
+
+	<br>
+	<div>
+
+
+	<footer>
+		<button id = 'hideButton' type="button"><a>hide content</a></button>
+		<h2>more information</h2>
+	</footer>
+</div>
+</body>
+</html>
